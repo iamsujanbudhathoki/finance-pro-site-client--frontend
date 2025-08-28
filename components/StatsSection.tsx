@@ -11,7 +11,7 @@ const stats = [
     description: 'Families and individuals trust us'
   },
   {
-    number: 2,
+    number: 10,
     suffix: '+',
     label: 'Years Experience',
     description: 'Proven track record in financial planning'

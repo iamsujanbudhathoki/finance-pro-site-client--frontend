@@ -1,8 +1,10 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useRouter } from 'next/navigation';
 import { Calendar, ArrowRight, CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import NProgress from 'nprogress';
 
 const benefits = [
   'Free 30-minute consultation',
@@ -12,6 +14,13 @@ const benefits = [
 ];
 
 export function CTASection() {
+  const router = useRouter();
+
+  const handleConsultationClick = () => {
+    NProgress.start();
+    router.push('/book-consultation');
+  };
+
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -67,6 +76,7 @@ export function CTASection() {
                 >
                   <Button
                     size="lg"
+                    onClick={handleConsultationClick}
                     className="bg-emerald-custom hover:bg-emerald-600 text-white font-montserrat font-bold px-12 py-6 text-xl group transition-all duration-300 animate-pulse-soft"
                   >
                     <Calendar className="w-6 h-6 mr-3" />

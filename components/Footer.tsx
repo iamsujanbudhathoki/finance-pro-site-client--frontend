@@ -37,17 +37,12 @@ export function Footer() {
           {/* Quick Links */}
           <div>
             <h3 className="font-montserrat font-semibold text-lg mb-4">Quick Links</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/about" className="text-gray-300 hover:text-emerald-custom transition-colors duration-300">
-                  About Me
-                </Link>
-              </li>
-              <li>
-                <Link href="/services" className="text-gray-300 hover:text-emerald-custom transition-colors duration-300">
-                  Services
-                </Link>
-              </li>
+            <ul className="space-y-2">              <li>
+              <Link href="/services" className="text-gray-300 hover:text-emerald-custom transition-colors duration-300">
+                Services
+              </Link>
+            </li>
+
               <li>
                 <Link href="/testimonials" className="text-gray-300 hover:text-emerald-custom transition-colors duration-300">
                   Testimonials
@@ -56,6 +51,16 @@ export function Footer() {
               <li>
                 <Link href="/contact" className="text-gray-300 hover:text-emerald-custom transition-colors duration-300">
                   Contact
+                </Link>
+              </li>
+              <li>
+                <Link href="/privacy-policy" className="text-gray-300 hover:text-emerald-custom transition-colors duration-300">
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link href="/terms-of-service" className="text-gray-300 hover:text-emerald-custom transition-colors duration-300">
+                  Terms of Service
                 </Link>
               </li>
             </ul>
@@ -75,7 +80,9 @@ export function Footer() {
               </li>
               <li className="flex items-start space-x-3">
                 <MapPin size={16} className="text-emerald-custom mt-1 flex-shrink-0" />
-                7420 Airport Rd, Mississauga, Ontario
+                                
+
+                <span className="text-gray-300">7420 Airport Rd, Mississauga, Ontario</span>
               </li>
             </ul>
           </div>
@@ -84,10 +91,10 @@ export function Footer() {
         <div className="border-t border-gray-600 mt-8 pt-8 text-center">
           <p className="text-gray-300">
             © 2025 Prashant Sapkota. All rights reserved. |
-            <Link href="#" className="hover:text-emerald-custom transition-colors duration-300 ml-1">
+            <Link href="/privacy-policy" className="hover:text-emerald-custom transition-colors duration-300 ml-1">
               Privacy Policy
             </Link> |
-            <Link href="#" className="hover:text-emerald-custom transition-colors duration-300 ml-1">
+            <Link href="/terms-of-service" className="hover:text-emerald-custom transition-colors duration-300 ml-1">
               Terms of Service
             </Link>
           </p>

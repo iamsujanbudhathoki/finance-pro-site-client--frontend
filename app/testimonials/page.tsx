@@ -59,7 +59,7 @@ const testimonials = [
 const stats = [
   { number: 500, suffix: '+', label: 'Happy Clients' },
   { number: 98, suffix: '%', label: 'Satisfaction Rate' },
-  { number: 2, suffix: '+', label: 'Years of Excellence' },
+  { number: 10, suffix: '+', label: 'Years of Excellence' },
   { number: 50, suffix: 'M+', label: 'Assets Under Management' },
 ];
 

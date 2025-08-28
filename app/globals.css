@@ -2,6 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
+/* NProgress Styles */
+#nprogress {
+  pointer-events: none;
+}
+
+#nprogress .bar {
+  background: #00A86B;
+  position: fixed;
+  z-index: 1031;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+}
+
+#nprogress .peg {
+  display: block;
+  position: absolute;
+  right: 0px;
+  width: 100px;
+  height: 100%;
+  box-shadow: 0 0 10px #00A86B, 0 0 5px #00A86B;
+  opacity: 1.0;
+  transform: rotate(3deg) translate(0px, -4px);
+}
+
 :root {
   --color-deep-blue: #0A1F44;
   --color-emerald: #00A86B;
@@ -37,14 +63,21 @@
 
 @layer base {
   * {
-    /* @apply border-border; */
+    @apply border-border;
   }
   body {
-    /* @apply bg-background text-foreground; */
+    @apply bg-background text-foreground;
   }
 }
 
 @layer utilities {
+  .select-text {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+  }
+  
   .gradient-primary {
     background: linear-gradient(135deg, var(--color-deep-blue) 0%, #1e40af 100%);
   }
@@ -63,6 +96,20 @@
   
   .animate-glow {
     animation: glow 2s ease-in-out infinite alternate;
+  }
+  
+  .line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+  
+  .line-clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
   }
   
   @keyframes pulse-soft {

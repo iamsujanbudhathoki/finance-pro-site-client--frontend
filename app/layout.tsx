@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { Montserrat, Inter } from 'next/font/google';
 import { Navigation } from '@/components/Navigation';
 import { Footer } from '@/components/Footer';
+import { ProgressBar } from '@/components/ProgressBar';
 
 const montserrat = Montserrat({ 
   subsets: ['latin'],
@@ -35,9 +36,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${montserrat.variable} ${inter.variable}`}>
-      <body className="font-inter">
+      <body className="font-inter bg-white">
         <Navigation />
-        <main className="min-h-screen">
+        <ProgressBar />
+        <main className="bg-white">
           {children}
         </main>
         <Footer />

@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { MapPin, Phone, Mail, Calendar, Clock, CheckCircle, ArrowRight } from 'lucide-react';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -306,6 +307,76 @@ export default function Contact() {
               )}
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-12 sm:py-20 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-12 lg:mb-16"
+          >
+            <h2 className="text-3xl sm:text-4xl font-montserrat font-bold text-deep-blue mb-4 lg:mb-6">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
+              Get answers to common questions about our services and consultation process.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="max-w-4xl mx-auto"
+          >
+            <Accordion type="single" collapsible className="space-y-4">
+              {[
+                {
+                  question: "How much does a consultation cost?",
+                  answer: "Your initial consultation is completely free with no obligation. This allows us to understand your needs and determine if we're a good fit to work together."
+                },
+                {
+                  question: "What should I bring to my consultation?",
+                  answer: "Please bring any recent financial statements, tax returns, insurance policies, and a list of your financial goals. Don't worry if you don't have everything – we can work with whatever information you have available."
+                },
+                {
+                  question: "How long does a typical consultation last?",
+                  answer: "Initial consultations typically last 30-60 minutes, depending on the complexity of your situation and the number of questions you have."
+                },
+                {
+                  question: "Do you work with clients outside your local area?",
+                  answer: "Yes! We work with clients nationwide through video conferencing and phone consultations. Many of our services can be delivered remotely."
+                },
+                {
+                  question: "What types of financial planning do you specialize in?",
+                  answer: "We provide comprehensive financial planning including retirement planning, investment management, insurance analysis, tax strategies, and estate planning coordination."
+                },
+                {
+                  question: "How do you charge for ongoing services?",
+                  answer: "We offer several fee structures including asset-based fees, hourly consulting, and project-based fees. We'll discuss the best option for your situation during our consultation."
+                }
+              ].map((faq, index) => (
+                <AccordionItem 
+                  key={index} 
+                  value={`item-${index}`}
+                  className="bg-white rounded-xl shadow-sm border border-gray-100 px-6"
+                >
+                  <AccordionTrigger className="text-left font-montserrat font-semibold text-deep-blue hover:text-emerald-custom transition-colors duration-300 py-6">
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-gray-600 leading-relaxed pb-6">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </motion.div>
         </div>
       </section>
 

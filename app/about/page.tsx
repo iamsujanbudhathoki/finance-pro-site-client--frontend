@@ -1,36 +1,103 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Award, Users, TrendingUp, Heart } from 'lucide-react';
-import Image from 'next/image';
+import { Award, Heart, Lightbulb, Shield, TrendingUp, Users } from 'lucide-react';
 
-const credentials = [
-  { title: 'Certified Financial Planner (CFP®)', year: '2018' },
-  { title: 'Chartered Financial Consultant (ChFC)', year: '2019' },
-  { title: 'Financial Risk Manager (FRM)', year: '2020' },
-  { title: 'Investment Advisor Representative', year: '2017' },
-];
+
 
 const values = [
   {
     icon: Heart,
     title: 'Client-First Approach',
     description: 'Your financial well-being and goals are always my top priority in every decision and recommendation.',
+    color: 'bg-red-500',
+    lightColor: 'bg-red-50',
+    textColor: 'text-red-600',
   },
   {
     icon: Award,
     title: 'Excellence & Expertise',
     description: 'Continuous learning and professional development ensure you receive the highest quality financial advice.',
+    color: 'bg-blue-500',
+    lightColor: 'bg-blue-50',
+    textColor: 'text-blue-600',
   },
   {
     icon: Users,
     title: 'Trust & Transparency',
     description: 'Building long-term relationships through honest communication and transparent fee structures.',
+    color: 'bg-green-500',
+    lightColor: 'bg-green-50',
+    textColor: 'text-green-600',
   },
   {
     icon: TrendingUp,
     title: 'Results-Driven',
     description: 'Focused on measurable outcomes that help you achieve your financial objectives and life goals.',
+    color: 'bg-purple-500',
+    lightColor: 'bg-purple-50',
+    textColor: 'text-purple-600',
+  },
+  {
+    icon: Shield,
+    title: 'Integrity First',
+    description: 'We operate with unwavering honesty and transparency, always putting your best interests first.',
+    color: 'bg-indigo-500',
+    lightColor: 'bg-indigo-50',
+    textColor: 'text-indigo-600',
+  },
+  {
+    icon: Lightbulb,
+    title: 'Innovation & Growth',
+    description: 'We continuously evolve our strategies and embrace new approaches to deliver the best outcomes.',
+    color: 'bg-yellow-500',
+    lightColor: 'bg-yellow-50',
+    textColor: 'text-yellow-600',
+  },
+];
+
+const teamMembers = [
+  {
+    name: 'Prashant Sapkota',
+    role: 'Founder & Lead Financial Advisor',
+    credentials: 'FSRA License, FSRA licensed, FRM',
+    bio: 'With over 2 years of experience, Prashant specializes in comprehensive financial planning and wealth management for impact-driven leaders.',
+    image: 'PS',
+  },
+  {
+    name: 'Sarah Mitchell',
+    role: 'Senior Investment Strategist',
+    credentials: 'CFA, MBA',
+    bio: 'Sarah brings 8 years of institutional investment experience, focusing on portfolio optimization and risk management strategies.',
+    image: 'SM',
+  },
+  {
+    name: 'Michael Chen',
+    role: 'Retirement Planning Specialist',
+    credentials: 'CFP®, RICP',
+    bio: 'Michael helps clients navigate complex retirement decisions with expertise in Social Security optimization and tax-efficient strategies.',
+    image: 'MC',
+  },
+  {
+    name: 'Jennifer Rodriguez',
+    role: 'Insurance & Risk Advisor',
+    credentials: 'CLU, ChFC',
+    bio: 'Jennifer specializes in comprehensive insurance planning and risk management solutions for families and business owners.',
+    image: 'JR',
+  },
+  {
+    name: 'David Thompson',
+    role: 'Tax Strategy Consultant',
+    credentials: 'CPA, PFS',
+    bio: 'David provides advanced tax planning strategies and works closely with clients to optimize their overall financial efficiency.',
+    image: 'DT',
+  },
+  {
+    name: 'Lisa Park',
+    role: 'Client Success Manager',
+    credentials: 'MBA, FPQP',
+    bio: 'Lisa ensures exceptional client experiences and coordinates comprehensive financial planning implementations across our team.',
+    image: 'LP',
   },
 ];
 
@@ -38,34 +105,34 @@ export default function About() {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="py-20 gradient-primary">
+      <section className="py-12 sm:py-20 gradient-primary">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-white"
+              className="text-white order-2 lg:order-1"
             >
-              <h1 className="text-4xl lg:text-6xl font-montserrat font-bold mb-6">
-                Meet Prashant Sapkota
+              <h1 className="text-3xl sm:text-4xl lg:text-6xl font-montserrat font-bold mb-4 lg:mb-6">
+                About Prashant Sapkota
               </h1>
-              <p className="text-xl text-gray-200 mb-8 leading-relaxed">
-                Your dedicated financial advisor committed to helping you achieve financial 
-                security and peace of mind through personalized strategies and expert guidance.
+              <p className="text-lg sm:text-xl text-gray-200 mb-6 lg:mb-8 leading-relaxed">
+                Your dedicated financial advisor committed to helping impact-driven leaders 
+                achieve financial security and create lasting positive change.
               </p>
-              <div className="flex items-center space-x-6 text-emerald-200">
-                <div>
-                  <div className="text-2xl font-bold">FSRA®</div>
-                  <div className="text-sm">Licensed</div>
+              <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-emerald-200">
+                <div className="text-center">
+                  <div className="text-xl sm:text-2xl font-bold">FSRA License</div>
+                  <div className="text-xs sm:text-sm">Certified</div>
                 </div>
-                <div>
-                  <div className="text-2xl font-bold">2+</div>
-                  <div className="text-sm">Years</div>
+                <div className="text-center">
+                  <div className="text-xl sm:text-2xl font-bold">2+</div>
+                  <div className="text-xs sm:text-sm">Years</div>
                 </div>
-                <div>
-                  <div className="text-2xl font-bold">500+</div>
-                  <div className="text-sm">Clients</div>
+                <div className="text-center">
+                  <div className="text-xl sm:text-2xl font-bold">500+</div>
+                  <div className="text-xs sm:text-sm">Clients</div>
                 </div>
               </div>
             </motion.div>
@@ -74,14 +141,13 @@ export default function About() {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="flex justify-center"
+              className="flex justify-center order-1 lg:order-2"
             >
               <div className="relative">
-                <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-2xl overflow-hidden shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500">
+                <div className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-2xl overflow-hidden shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500">
                   <div className="w-full h-full bg-gradient-to-br from-emerald-custom/20 to-white/20 flex items-center justify-center">
-                    <div className="w-60 h-60 lg:w-72 lg:h-72 rounded-xl bg-white/90 flex items-center justify-center">
-                    <img src="/laptop_look.jpeg" alt="" />
-                      {/* <span className="text-6xl lg:text-7xl font-montserrat font-bold text-deep-blue">PS</span> */}
+                    <div className="w-48 h-48 sm:w-60 sm:h-60 lg:w-72 lg:h-72 rounded-xl bg-white/90 flex items-center justify-center">
+                      <span className="text-4xl sm:text-6xl lg:text-7xl font-montserrat font-bold text-deep-blue">PS</span>
                     </div>
                   </div>
                 </div>
@@ -91,79 +157,129 @@ export default function About() {
         </div>
       </section>
 
-      {/* Story Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl font-montserrat font-bold text-deep-blue mb-6">
-                My Story & Mission
-              </h2>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="prose prose-lg max-w-none text-gray-700 space-y-6"
-            >
-              <p>
-                My journey in financial planning began over a decade ago when I witnessed firsthand 
-                how proper financial guidance could transform lives. After seeing too many families 
-                struggle with financial uncertainty despite working hard, I knew I wanted to dedicate 
-                my career to helping people achieve financial security and peace of mind.
-              </p>
-              
-              <p>
-                I earned my Certified Financial Planner (CFP®) designation and have since helped over 
-                500 individuals and families navigate complex financial decisions. Whether it's planning 
-                for retirement, protecting against unexpected events, or building wealth for the future, 
-                I believe that everyone deserves access to expert financial guidance tailored to their 
-                unique circumstances.
-              </p>
-              
-              <p>
-                My approach is simple: listen first, understand your goals, and then create a comprehensive 
-                strategy that adapts as your life changes. I'm not just here to manage your money – I'm 
-                here to be your trusted advisor for life's most important financial decisions.
-              </p>
-              
-              <p>
-                When I'm not helping clients achieve their financial dreams, you'll find me spending 
-                time with my family, volunteering in the community, and continuously expanding my 
-                knowledge through ongoing education and industry certifications.
-              </p>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Values Section */}
-      <section className="py-20 bg-gray-50">
+      {/* What We Do Section */}
+      <section className="py-12 sm:py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-12 lg:mb-16"
           >
-            <h2 className="text-4xl font-montserrat font-bold text-deep-blue mb-6">
-              My Core Values
+            <h2 className="text-3xl sm:text-4xl font-montserrat font-bold text-deep-blue mb-4 lg:mb-6">
+              What Do We Do?
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              These principles guide every interaction and decision I make on behalf of my clients.
+            <p className="text-lg sm:text-xl text-gray-600 max-w-4xl mx-auto">
+              Community, Coaching, and Experiences for Impact-Driven Leaders
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+            {[
+              {
+                title: 'Community Coaching',
+                description: 'Join a supportive community of like-minded leaders working together to achieve financial independence and create positive impact.',
+                icon: Users,
+              },
+              {
+                title: '1:1 Coaching',
+                description: 'Personalized financial guidance tailored to your unique situation, goals, and vision for creating meaningful change.',
+                icon: Heart,
+              },
+              {
+                title: 'In-Person Experience',
+                description: 'Immersive workshops and retreats designed to accelerate your financial growth and leadership development.',
+                icon: TrendingUp,
+              },
+            ].map((service, index) => (
+              <motion.div
+                key={service.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-gray-50 rounded-xl p-6 lg:p-8 hover:bg-gray-100 transition-colors duration-300"
+              >
+                <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mb-4 lg:mb-6">
+                  <service.icon className="w-6 h-6 text-emerald-custom" />
+                </div>
+                <h3 className="text-xl font-montserrat font-semibold text-deep-blue mb-3 lg:mb-4">
+                  {service.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  {service.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Mission Section */}
+      <section className="py-12 sm:py-20 bg-gray-50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-12 lg:mb-16"
+          >
+            <h2 className="text-3xl sm:text-4xl font-montserrat font-bold text-deep-blue mb-4 lg:mb-6">
+              Our Mission
+            </h2>
+            <p className="text-lg sm:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              To empower impact-driven leaders to achieve financial freedom and create 
+              lasting positive change in their communities through personalized guidance, 
+              strategic planning, and comprehensive support.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            viewport={{ once: true }}
+            className="bg-white rounded-2xl p-8 lg:p-12 shadow-lg max-w-4xl mx-auto"
+          >
+            <blockquote className="text-xl sm:text-2xl text-gray-700 leading-relaxed text-center italic mb-6 lg:mb-8">
+              "We believe that when impact-driven leaders achieve financial security, 
+              they can focus on what matters most – creating positive change in the world."
+            </blockquote>
+            <div className="flex items-center justify-center space-x-4">
+              <div className="w-12 h-12 rounded-full gradient-primary flex items-center justify-center">
+                <span className="text-white font-montserrat font-bold text-lg">PS</span>
+              </div>
+              <div className="text-left">
+                <div className="font-montserrat font-semibold text-deep-blue">Prashant Sapkota</div>
+                <div className="text-gray-600">Founder & Lead Financial Advisor</div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Core Values Section */}
+      <section className="py-12 sm:py-20 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-12 lg:mb-16"
+          >
+            <h2 className="text-3xl sm:text-4xl font-montserrat font-bold text-deep-blue mb-4 lg:mb-6">
+              Our Core Values
+            </h2>
+            <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
+              The fundamental principles that guide every decision we make and 
+              every relationship we build with our clients.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {values.map((value, index) => (
               <motion.div
                 key={value.title}
@@ -171,71 +287,88 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300"
+                whileHover={{ y: -10, scale: 1.02 }}
+                className="bg-gray-50 rounded-xl p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300"
               >
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <value.icon className="w-6 h-6 text-emerald-custom" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-montserrat font-semibold text-deep-blue mb-3">
-                      {value.title}
-                    </h3>
-                    <p className="text-gray-600 leading-relaxed">
-                      {value.description}
-                    </p>
-                  </div>
+                <div className={`w-12 h-12 lg:w-16 lg:h-16 ${value.color} rounded-xl flex items-center justify-center mb-4 lg:mb-6`}>
+                  <value.icon className="w-6 h-6 lg:w-8 lg:h-8 text-white" />
                 </div>
+                
+                <h3 className="text-lg sm:text-xl lg:text-2xl font-montserrat font-bold text-deep-blue mb-3 lg:mb-4">
+                  {value.title}
+                </h3>
+                
+                <p className="text-gray-600 leading-relaxed">
+                  {value.description}
+                </p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Credentials Section */}
-      <section className="py-20 bg-white">
+      {/* Team Section */}
+      <section className="py-12 sm:py-20 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl font-montserrat font-bold text-deep-blue mb-6">
-                Professional Credentials
-              </h2>
-              <p className="text-xl text-gray-600">
-                Continuous education and certifications ensure you receive the highest quality advice.
-              </p>
-            </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-12 lg:mb-16"
+          >
+            <h2 className="text-3xl sm:text-4xl font-montserrat font-bold text-deep-blue mb-4 lg:mb-6">
+              Our Team
+            </h2>
+            <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
+              A dedicated group of financial professionals committed to helping 
+              impact-driven leaders achieve their goals and create lasting success.
+            </p>
+          </motion.div>
 
-            <div className="grid md:grid-cols-2 gap-6">
-              {credentials.map((credential, index) => (
-                <motion.div
-                  key={credential.title}
-                  initial={{ opacity: 0, x: -30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="flex items-center space-x-4 p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-300"
-                >
-                  <div className="w-12 h-12 bg-emerald-custom rounded-full flex items-center justify-center">
-                    <Award className="w-6 h-6 text-white" />
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            {teamMembers.map((member, index) => (
+              <motion.div
+                key={member.name}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -10, scale: 1.02 }}
+                className="bg-white rounded-2xl p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 text-center"
+              >
+                {/* Profile Image */}
+                <div className="relative mb-4 lg:mb-6">
+                  <div className="w-24 h-24 sm:w-32 sm:h-32 mx-auto rounded-full gradient-primary flex items-center justify-center mb-4">
+                    <span className="text-white font-montserrat font-bold text-2xl sm:text-3xl">
+                      {member.image}
+                    </span>
                   </div>
-                  <div>
-                    <h3 className="font-montserrat font-semibold text-deep-blue">
-                      {credential.title}
-                    </h3>
-                    <p className="text-gray-600">Earned {credential.year}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
+                </div>
+
+                {/* Member Info */}
+                <h3 className="text-lg sm:text-xl font-montserrat font-bold text-deep-blue mb-2">
+                  {member.name}
+                </h3>
+                
+                <p className="text-emerald-custom font-semibold mb-2">
+                  {member.role}
+                </p>
+                
+                <p className="text-sm text-gray-500 mb-4">
+                  {member.credentials}
+                </p>
+                
+                <p className="text-gray-600 leading-relaxed text-sm">
+                  {member.bio}
+                </p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
+
+    
     </div>
   );
 }
