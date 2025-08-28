@@ -125,7 +125,8 @@ export function Navigation() {
               }`}
             >
               <div className="w-10 h-10 rounded-full gradient-primary flex items-center justify-center">
-                <span className="text-white font-montserrat font-bold text-lg">PS</span>
+                {/* <span className="text-white font-montserrat font-bold text-lg">PS</span> */}
+                <img src="/advisory_logo.svg" alt="" />
               </div>
               <div className="hidden sm:block">
                 <h1

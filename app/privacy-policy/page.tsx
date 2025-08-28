@@ -267,8 +267,8 @@ export default function PrivacyPolicy() {
           </p>
           <div className="space-y-2 text-sm text-gray-700">
             <p className="flex items-center"><Mail className="w-4 h-4 mr-2 text-emerald-600" /> info@prashantadvisory.com</p>
-            <p className="flex items-center"><Phone className="w-4 h-4 mr-2 text-blue-600" /> +1 (234) 567-890</p>
-            <p className="flex items-center"><MapPin className="w-4 h-4 mr-2 text-purple-600" /> 123 Advisory Lane, Toronto, ON, Canada</p>
+            <p className="flex items-center"><Phone className="w-4 h-4 mr-2 text-blue-600" /> +1 2269751978</p>
+            <p className="flex items-center"><MapPin className="w-4 h-4 mr-2 text-purple-600" /> </p>
           </div>
         </div>
       )
