@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useRouter, usePathname } from 'next/navigation';
-import { Menu, X, Phone, ChevronDown } from 'lucide-react';
+import { X, Phone, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import NProgress from 'nprogress';
 
@@ -20,14 +20,20 @@ const resourcesDropdown = [
   { href: '/resources/workshops', label: 'Upcoming Workshops' },
 ];
 
+type ActiveDropdown = 'Services' | 'Resources' | null;
+
+interface DropdownMenuProps {
+  items: { href: string; label: string }[];
+  label: 'Services' | 'Resources';
+}
+
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState(null);
+  const [activeDropdown, setActiveDropdown] = useState<ActiveDropdown>(null);
   const router = useRouter();
   const pathname = usePathname();
 
-  // Check if current page is home page
   const isHomePage = pathname === '/';
 
   useEffect(() => {
@@ -38,7 +44,6 @@ export function Navigation() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close mobile menu when route changes
   useEffect(() => {
     setIsOpen(false);
     setActiveDropdown(null);
@@ -51,16 +56,16 @@ export function Navigation() {
     setActiveDropdown(null);
   };
 
-  // Determine if we should use light theme based on page type and scroll
   const shouldUseLightTheme = !isHomePage || scrolled;
 
-  const DropdownMenu = ({ items, label }: any ) => (
+  const DropdownMenu = ({ items, label }: DropdownMenuProps) => (
     <div className="relative group">
       <button
-        className={`flex items-center space-x-1 font-medium transition-all duration-300 relative group ${shouldUseLightTheme
-          ? 'text-gray-700 hover:text-deep-blue'
-          : 'text-white hover:text-emerald-200 drop-shadow-md'
-          }`}
+        className={`flex items-center space-x-1 font-medium transition-all duration-300 relative group ${
+          shouldUseLightTheme
+            ? 'text-gray-700 hover:text-deep-blue'
+            : 'text-white hover:text-emerald-200 drop-shadow-md'
+        }`}
         onMouseEnter={() => setActiveDropdown(label)}
       >
         <span>{label}</span>
@@ -102,10 +107,11 @@ export function Navigation() {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${shouldUseLightTheme
-        ? 'bg-white/95 backdrop-blur-md shadow-lg'
-        : 'bg-black/20 backdrop-blur-sm'
-        }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        shouldUseLightTheme
+          ? 'bg-white/95 backdrop-blur-md shadow-lg'
+          : 'bg-black/20 backdrop-blur-sm'
+      }`}
       onMouseLeave={() => setActiveDropdown(null)}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -114,19 +120,32 @@ export function Navigation() {
           <Link href="/" className="flex-shrink-0 z-50">
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className={`flex items-center space-x-2 ${!shouldUseLightTheme ? 'drop-shadow-lg' : ''
-                }`}
+              className={`flex items-center space-x-2 ${
+                !shouldUseLightTheme ? 'drop-shadow-lg' : ''
+              }`}
             >
               <div className="w-10 h-10 rounded-full gradient-primary flex items-center justify-center">
                 <span className="text-white font-montserrat font-bold text-lg">PS</span>
               </div>
               <div className="hidden sm:block">
-                <h1 className={`font-montserrat font-bold text-xl transition-colors duration-300 ${shouldUseLightTheme ? 'text-deep-blue' : 'text-white drop-shadow-md'
-                  }`}>
+                <h1
+                  className={`font-montserrat font-bold text-xl transition-colors duration-300 ${
+                    shouldUseLightTheme
+                      ? 'text-deep-blue'
+                      : 'text-white drop-shadow-md'
+                  }`}
+                >
                   Prashant Sapkota
                 </h1>
-                <p className={`text-sm transition-colors duration-300 ${shouldUseLightTheme ? 'text-gray-600' : 'text-gray-200 drop-shadow-md'
-                  }`}>Financial Advisor</p>
+                <p
+                  className={`text-sm transition-colors duration-300 ${
+                    shouldUseLightTheme
+                      ? 'text-gray-600'
+                      : 'text-gray-200 drop-shadow-md'
+                  }`}
+                >
+                  Financial Advisor
+                </p>
               </div>
             </motion.div>
           </Link>
@@ -135,10 +154,11 @@ export function Navigation() {
           <div className="hidden lg:flex items-center space-x-8 desktop-menu">
             <Link
               href="/about"
-              className={`font-medium transition-all duration-300 relative group ${shouldUseLightTheme
-                ? 'text-gray-700 hover:text-deep-blue'
-                : 'text-white hover:text-emerald-200 drop-shadow-md'
-                }`}
+              className={`font-medium transition-all duration-300 relative group ${
+                shouldUseLightTheme
+                  ? 'text-gray-700 hover:text-deep-blue'
+                  : 'text-white hover:text-emerald-200 drop-shadow-md'
+              }`}
               onClick={(e) => {
                 e.preventDefault();
                 handleNavigation('/about');
@@ -168,14 +188,15 @@ export function Navigation() {
             </Button>
           </div>
 
-          {/* Mobile menu button - Made sure it's visible */}
+          {/* Mobile menu button */}
           <div className="lg:hidden z-50">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className={`p-2 rounded-md transition-all duration-300 ${shouldUseLightTheme
-                ? 'text-deep-blue hover:bg-gray-100'
-                : 'text-white hover:bg-white/10 drop-shadow-md'
-                } ${isOpen ? 'bg-white/10' : ''}`}
+              className={`p-2 rounded-md transition-all duration-300 ${
+                shouldUseLightTheme
+                  ? 'text-deep-blue hover:bg-gray-100'
+                  : 'text-white hover:bg-white/10 drop-shadow-md'
+              } ${isOpen ? 'bg-white/10' : ''}`}
               aria-label="Toggle menu"
             >
               <div className="w-6 h-6 relative">
@@ -253,11 +274,19 @@ export function Navigation() {
                     {/* Mobile Services Accordion */}
                     <div>
                       <button
-                        onClick={() => setActiveDropdown(activeDropdown === 'Services' ? null : 'Services')}
+                        onClick={() =>
+                          setActiveDropdown(
+                            activeDropdown === 'Services' ? null : 'Services'
+                          )
+                        }
                         className="w-full flex items-center justify-between text-gray-700 hover:text-deep-blue hover:bg-gray-50 px-4 py-3 rounded-lg font-medium transition-colors duration-300"
                       >
                         <span>Services</span>
-                        <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${activeDropdown === 'Services' ? 'rotate-180' : ''}`} />
+                        <ChevronDown
+                          className={`w-4 h-4 transition-transform duration-300 ${
+                            activeDropdown === 'Services' ? 'rotate-180' : ''
+                          }`}
+                        />
                       </button>
                       <AnimatePresence>
                         {activeDropdown === 'Services' && (
@@ -290,11 +319,19 @@ export function Navigation() {
                     {/* Mobile Resources Accordion */}
                     <div>
                       <button
-                        onClick={() => setActiveDropdown(activeDropdown === 'Resources' ? null : 'Resources')}
+                        onClick={() =>
+                          setActiveDropdown(
+                            activeDropdown === 'Resources' ? null : 'Resources'
+                          )
+                        }
                         className="w-full flex items-center justify-between text-gray-700 hover:text-deep-blue hover:bg-gray-50 px-4 py-3 rounded-lg font-medium transition-colors duration-300"
                       >
                         <span>Resources</span>
-                        <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${activeDropdown === 'Resources' ? 'rotate-180' : ''}`} />
+                        <ChevronDown
+                          className={`w-4 h-4 transition-transform duration-300 ${
+                            activeDropdown === 'Resources' ? 'rotate-180' : ''
+                          }`}
+                        />
                       </button>
                       <AnimatePresence>
                         {activeDropdown === 'Resources' && (

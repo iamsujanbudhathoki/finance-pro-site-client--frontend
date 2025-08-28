@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Award, Heart, Lightbulb, Shield, TrendingUp, Users } from 'lucide-react';
+import Image from 'next/image';
 
 
 
@@ -118,7 +119,7 @@ export default function About() {
                 About Prashant Sapkota
               </h1>
               <p className="text-lg sm:text-xl text-gray-200 mb-6 lg:mb-8 leading-relaxed">
-                Your dedicated financial advisor committed to helping impact-driven leaders 
+                Your dedicated financial advisor committed to helping impact-driven leaders
                 achieve financial security and create lasting positive change.
               </p>
               <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-emerald-200">
@@ -137,22 +138,32 @@ export default function About() {
               </div>
             </motion.div>
 
+        
             <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="flex justify-center order-1 lg:order-2"
+              className="flex justify-center order-1 lg:order-2 relative"
             >
-              <div className="relative">
-                <div className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-2xl overflow-hidden shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500">
-                  <div className="w-full h-full bg-gradient-to-br from-emerald-custom/20 to-white/20 flex items-center justify-center">
-                    <div className="w-48 h-48 sm:w-60 sm:h-60 lg:w-72 lg:h-72 rounded-xl bg-white/90 flex items-center justify-center">
-                      <span className="text-4xl sm:text-6xl lg:text-7xl font-montserrat font-bold text-deep-blue">PS</span>
-                    </div>
-                  </div>
-                </div>
+              {/* Background glow */}
+              <div className="absolute inset-0 flex justify-center">
+                <div className="w-40 h-40 sm:w-56 sm:h-56 lg:w-72 lg:h-72 bg-emerald-400/20 blur-2xl rounded-full" />
+              </div>
+
+              {/* Main image */}
+              <div className="relative z-10 overflow-hidden rounded-2xl shadow-lg transform hover:scale-105 transition-transform duration-500">
+                <Image
+                  src="/main_hero_image.jpeg"
+                  alt="Hero Image"
+                  width={300}   // smaller for about section
+                  height={300}
+                  className="rounded-2xl object-cover"
+                />
               </div>
             </motion.div>
+            
+
+
           </div>
         </div>
       </section>
@@ -230,8 +241,8 @@ export default function About() {
               Our Mission
             </h2>
             <p className="text-lg sm:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              To empower impact-driven leaders to achieve financial freedom and create 
-              lasting positive change in their communities through personalized guidance, 
+              To empower impact-driven leaders to achieve financial freedom and create
+              lasting positive change in their communities through personalized guidance,
               strategic planning, and comprehensive support.
             </p>
           </motion.div>
@@ -244,7 +255,7 @@ export default function About() {
             className="bg-white rounded-2xl p-8 lg:p-12 shadow-lg max-w-4xl mx-auto"
           >
             <blockquote className="text-xl sm:text-2xl text-gray-700 leading-relaxed text-center italic mb-6 lg:mb-8">
-              "We believe that when impact-driven leaders achieve financial security, 
+              "We believe that when impact-driven leaders achieve financial security,
               they can focus on what matters most – creating positive change in the world."
             </blockquote>
             <div className="flex items-center justify-center space-x-4">
@@ -274,7 +285,7 @@ export default function About() {
               Our Core Values
             </h2>
             <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
-              The fundamental principles that guide every decision we make and 
+              The fundamental principles that guide every decision we make and
               every relationship we build with our clients.
             </p>
           </motion.div>
@@ -293,11 +304,11 @@ export default function About() {
                 <div className={`w-12 h-12 lg:w-16 lg:h-16 ${value.color} rounded-xl flex items-center justify-center mb-4 lg:mb-6`}>
                   <value.icon className="w-6 h-6 lg:w-8 lg:h-8 text-white" />
                 </div>
-                
+
                 <h3 className="text-lg sm:text-xl lg:text-2xl font-montserrat font-bold text-deep-blue mb-3 lg:mb-4">
                   {value.title}
                 </h3>
-                
+
                 <p className="text-gray-600 leading-relaxed">
                   {value.description}
                 </p>
@@ -321,7 +332,7 @@ export default function About() {
               Our Team
             </h2>
             <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
-              A dedicated group of financial professionals committed to helping 
+              A dedicated group of financial professionals committed to helping
               impact-driven leaders achieve their goals and create lasting success.
             </p>
           </motion.div>
@@ -350,15 +361,15 @@ export default function About() {
                 <h3 className="text-lg sm:text-xl font-montserrat font-bold text-deep-blue mb-2">
                   {member.name}
                 </h3>
-                
+
                 <p className="text-emerald-custom font-semibold mb-2">
                   {member.role}
                 </p>
-                
+
                 <p className="text-sm text-gray-500 mb-4">
                   {member.credentials}
                 </p>
-                
+
                 <p className="text-gray-600 leading-relaxed text-sm">
                   {member.bio}
                 </p>
@@ -368,7 +379,7 @@ export default function About() {
         </div>
       </section>
 
-    
+
     </div>
   );
 }

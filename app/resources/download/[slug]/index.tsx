@@ -1,9 +1,10 @@
-import { Metadata } from 'next';
-import { Download, ArrowLeft, CheckCircle } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import Link from 'next/link';
-import Image from 'next/image';
 import { DownloadForm } from '@/components/DownloadForm';
+import { motion } from 'framer-motion';
+import { ArrowLeft, CheckCircle } from 'lucide-react';
+import { Metadata } from 'next';
+import Image from 'next/image';
+import Link from 'next/link';
+
 
 const downloadResources = {
   'financial-health-checklist': {

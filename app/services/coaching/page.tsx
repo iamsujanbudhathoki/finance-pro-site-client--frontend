@@ -125,7 +125,7 @@ export default function OneOnOneCoaching() {
                                         Work Directly with Prashant
                                     </h3>
                                     <p className="text-gray-600 mb-6">
-                                        Get personalized attention from a certified financial planner with over 10 years
+                                        Get personalized attention from a certified financial planner with over 2 years
                                         of experience helping impact-driven leaders achieve their financial goals.
                                     </p>
                                     <div className="grid grid-cols-3 gap-4 text-center">
@@ -134,7 +134,7 @@ export default function OneOnOneCoaching() {
                                             <div className="text-sm text-gray-600">Certified</div>
                                         </div>
                                         <div>
-                                            <div className="text-2xl font-bold text-emerald-custom">10+</div>
+                                            <div className="text-2xl font-bold text-emerald-custom">2+</div>
                                             <div className="text-sm text-gray-600">Years</div>
                                         </div>
                                         <div>

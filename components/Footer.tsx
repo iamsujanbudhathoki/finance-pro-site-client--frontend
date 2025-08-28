@@ -80,7 +80,7 @@ export function Footer() {
               </li>
               <li className="flex items-start space-x-3">
                 <MapPin size={16} className="text-emerald-custom mt-1 flex-shrink-0" />
-                                
+
 
                 <span className="text-gray-300">7420 Airport Rd, Mississauga, Ontario</span>
               </li>
@@ -89,16 +89,24 @@ export function Footer() {
         </div>
 
         <div className="border-t border-gray-600 mt-8 pt-8 text-center">
-          <p className="text-gray-300">
+          <span className="text-gray-300 font-normal text-sm">
             © 2025 Prashant Sapkota. All rights reserved. |
-            <Link href="/privacy-policy" className="hover:text-emerald-custom transition-colors duration-300 ml-1">
+            <Link
+              href="/privacy-policy"
+              className="hover:text-emerald-custom transition-colors duration-300 ml-1"
+            >
               Privacy Policy
-            </Link> |
-            <Link href="/terms-of-service" className="hover:text-emerald-custom transition-colors duration-300 ml-1">
+            </Link>{" "}
+            |
+            <Link
+              href="/terms-of-service"
+              className="hover:text-emerald-custom transition-colors duration-300 ml-1"
+            >
               Terms of Service
             </Link>
-          </p>
+          </span>
         </div>
+
       </div>
     </footer>
   );

@@ -182,7 +182,9 @@ export function Hero() {
               >
                 <div className="w-full h-full bg-gradient-to-br from-emerald-custom/20 to-white/10 flex items-center justify-center">
                   <div className="w-60 h-60 lg:w-72 lg:h-72 rounded-full bg-white/90 flex items-center justify-center">
-                    <span className="text-6xl lg:text-7xl font-montserrat font-bold text-deep-blue">PS</span>
+                    {/* <span className="text-6xl lg:text-7xl font-montserrat font-bold text-deep-blue">PS</span> */}
+
+                    <img src="/main_hero_image.jpeg" alt="" />
                   </div>
                 </div>
               </motion.div>
