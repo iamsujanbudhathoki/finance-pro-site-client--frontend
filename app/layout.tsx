@@ -36,6 +36,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${montserrat.variable} ${inter.variable}`}>
+      <link rel="icon" href="/advisory_logo.svg" sizes="any" />
       <body className="font-inter bg-white">
         <Navigation />
         <ProgressBar />
