@@ -9,12 +9,7 @@ const companies = [
   { name: 'Charles Schwab', initials: 'CS', img: '/equitable_health.png' },
   { name: 'Vanguard', initials: 'VG', img: '/foresters_financial.svg' },
   { name: 'Edward Jones', initials: 'EJ', img: '/ivari.svg' },
-  { name: 'Merrill Lynch', initials: 'ML', img: '/manu_life.jpg' },
-  { name: 'Morgan Stanley', initials: 'MS', img: '/morgan-stanley.png' },
-  { name: 'Goldman Sachs', initials: 'GS', img: '/goldman-sachs.png' },
-  { name: 'JP Morgan', initials: 'JPM', img: '/jp-morgan.png' },
-  { name: 'Wells Fargo', initials: 'WF', img: '/wells-fargo.png' },
-  { name: 'Bank of America', initials: 'BOA', img: '/bank-of-america.png' },
+  { name: 'Merrill Lynch', initials: 'ML', img: '/manu_life.jpg' }
 ];
 
 export function TrustedBySection() {
