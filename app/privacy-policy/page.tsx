@@ -268,7 +268,7 @@ export default function PrivacyPolicy() {
           <div className="space-y-2 text-sm text-gray-700">
             <p className="flex items-center"><Mail className="w-4 h-4 mr-2 text-emerald-600" /> info@prashantadvisory.com</p>
             <p className="flex items-center"><Phone className="w-4 h-4 mr-2 text-blue-600" /> +1 2269751978</p>
-            <p className="flex items-center"><MapPin className="w-4 h-4 mr-2 text-purple-600" /> </p>
+            <p className="flex items-center"><MapPin className="w-4 h-4 mr-2 text-purple-600" /> 7420 Airport Rd, Mississauga, Ontario</p>
           </div>
         </div>
       )

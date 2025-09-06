@@ -97,7 +97,7 @@ export default function FreeDownloads() {
               Free Financial Resources
             </h1>
             <p className="text-lg sm:text-xl text-gray-200 mb-8 leading-relaxed">
-              Download our collection of practical tools, worksheets, and guides to help you 
+              Download our collection of practical tools, worksheets, and guides to help you
               take control of your finances and build lasting wealth.
             </p>
             <div className="flex justify-center">
@@ -125,7 +125,7 @@ export default function FreeDownloads() {
               Choose Your Resources
             </h2>
             <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
-              Each resource is designed to provide immediate value and actionable insights 
+              Each resource is designed to provide immediate value and actionable insights
               for your financial journey.
             </p>
           </motion.div>
@@ -183,32 +183,6 @@ export default function FreeDownloads() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-12 sm:py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center max-w-4xl mx-auto"
-          >
-            <h2 className="text-3xl sm:text-4xl font-montserrat font-bold text-deep-blue mb-4 lg:mb-6">
-              Need More Personalized Help?
-            </h2>
-            <p className="text-lg sm:text-xl text-gray-600 mb-8">
-              While these resources provide great starting points, sometimes you need 
-              personalized guidance to address your specific situation and goals.
-            </p>
-            <Button
-              size="lg"
-              className="bg-emerald-custom hover:bg-emerald-600 text-white font-montserrat font-semibold px-8 py-4 text-lg hover:scale-105 hover:shadow-lg hover:shadow-emerald-500/25 transition-all duration-300 animate-glow"
-            >
-              Schedule Free Consultation
-            </Button>
-          </motion.div>
-        </div>
-      </section>
     </div>
   );
 }

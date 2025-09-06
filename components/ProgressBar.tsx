@@ -1,21 +1,15 @@
-'use client';
+"use client";
 
-import { useEffect } from 'react';
-import { usePathname } from 'next/navigation';
-import NProgress from 'nprogress';
-
-NProgress.configure({
-  showSpinner: false,
-  trickleSpeed: 200,
-  minimum: 0.08,
-});
+import NextNProgress from "nextjs-progressbar";
 
 export function ProgressBar() {
-  const pathname = usePathname();
-
-  useEffect(() => {
-    NProgress.done();
-  }, [pathname]);
-
-  return null;
+  return (
+    <NextNProgress
+      color="#29D"
+      startPosition={0.3}
+      stopDelayMs={200}
+      height={3}
+      showOnShallow={true}
+    />
+  );
 }

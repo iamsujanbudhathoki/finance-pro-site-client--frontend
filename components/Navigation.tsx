@@ -15,6 +15,7 @@ const servicesDropdown = [
 ];
 
 const resourcesDropdown = [
+  { href: '/teams', label: 'Our Team' },
   { href: '/blog', label: 'Blog' },
   { href: '/resources/downloads', label: 'Free Downloads' },
   { href: '/resources/workshops', label: 'Upcoming Workshops' },
@@ -50,7 +51,6 @@ export function Navigation() {
   }, [pathname]);
 
   const handleNavigation = (href: string) => {
-    NProgress.start();
     router.push(href);
     setIsOpen(false);
     setActiveDropdown(null);

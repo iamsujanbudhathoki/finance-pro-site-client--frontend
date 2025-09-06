@@ -21,6 +21,13 @@ export function Hero() {
     router.push('/book-consultation');
   };
 
+
+  const onClickLearnMore  = ()=>{
+    NProgress.start();
+    router.push('/about');
+ 
+  }
+
   return (
     <section className="min-h-screen relative gradient-primary flex items-center overflow-hidden">
       {/* Background Pattern */}
@@ -108,6 +115,7 @@ export function Hero() {
               <Button
                 variant="outline"
                 size="lg"
+                onClick={onClickLearnMore}
                 className="border-2 border-white text-white bg-transparent hover:bg-white hover:text-deep-blue font-montserrat font-semibold px-8 py-4 text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
               >
                 Learn More

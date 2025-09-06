@@ -1,9 +1,12 @@
-import './globals.css';
-import type { Metadata } from 'next';
-import { Montserrat, Inter } from 'next/font/google';
-import { Navigation } from '@/components/Navigation';
+
 import { Footer } from '@/components/Footer';
+import { Navigation } from '@/components/Navigation';
+import type { Metadata } from 'next';
+import { Inter, Montserrat } from 'next/font/google';
+import './globals.css';
+
 import { ProgressBar } from '@/components/ProgressBar';
+
 
 const montserrat = Montserrat({ 
   subsets: ['latin'],
@@ -38,8 +41,8 @@ export default function RootLayout({
     <html lang="en" className={`${montserrat.variable} ${inter.variable}`}>
       <link rel="icon" href="/advisory_logo.svg" sizes="any" />
       <body className="font-inter bg-white">
+      <ProgressBar />
         <Navigation />
-        <ProgressBar />
         <main className="bg-white">
           {children}
         </main>

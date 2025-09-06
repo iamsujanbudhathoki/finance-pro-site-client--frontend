@@ -138,7 +138,7 @@ export default function About() {
               </div>
             </motion.div>
 
-        
+
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
@@ -161,10 +161,67 @@ export default function About() {
                 />
               </div>
             </motion.div>
-            
+
 
 
           </div>
+        </div>
+      </section>
+
+      {/* My Story Section */}
+      <section className="py-12 sm:py-20 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-12 lg:mb-16"
+          >
+            <h2 className="text-3xl sm:text-4xl font-montserrat font-bold text-deep-blue mb-4 lg:mb-6">
+              My Story
+            </h2>
+            <p className="text-lg sm:text-xl text-gray-600 max-w-4xl mx-auto">
+              From Cybersecurity Professional to Financial Entrepreneur
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            viewport={{ once: true }}
+            className="bg-gray-50 rounded-2xl p-8 lg:p-12 shadow-lg max-w-4xl mx-auto"
+          >
+            <div className="prose prose-lg max-w-none text-gray-700">
+              <p className="text-xl leading-relaxed mb-6">
+                My journey into financial services began in an unexpected place – the world of cybersecurity.
+                For years, I protected digital assets and helped organizations secure their most valuable data.
+                But I realized that while I was helping businesses protect their digital wealth, many families
+                around me were struggling to build and protect their financial wealth.
+              </p>
+
+              <p className="text-lg leading-relaxed mb-6">
+                This realization sparked a passion that would change my life forever. I made the bold decision
+                to transition from cybersecurity to financial services, driven by a mission to help families
+                achieve true financial freedom. I obtained my licenses with World Financial Group (WFG) and
+                Equitable Life, and expanded my expertise across both Canadian and US markets.
+              </p>
+
+              <p className="text-lg leading-relaxed mb-6">
+                Today, I combine my analytical background from cybersecurity with comprehensive financial
+                expertise to provide families with the protection and growth strategies they need. My unique
+                perspective allows me to identify financial vulnerabilities and create robust strategies that
+                protect and grow wealth simultaneously.
+              </p>
+
+              <p className="text-lg leading-relaxed">
+                Every family deserves financial security and the freedom to pursue their dreams. That's why
+                I'm committed to making expert financial guidance accessible, understandable, and actionable
+                for families at every stage of their financial journey.
+              </p>
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -259,9 +316,15 @@ export default function About() {
               they can focus on what matters most – creating positive change in the world."
             </blockquote>
             <div className="flex items-center justify-center space-x-4">
-              <div className="w-12 h-12 rounded-full gradient-primary flex items-center justify-center">
-                <span className="text-white font-montserrat font-bold text-lg">PS</span>
+              <div className="w-12 h-12 rounded-full gradient-primary flex items-center justify-center overflow-hidden">
+                <img
+                  src="./main_hero_image.png"
+                  alt="Hero"
+                  className="w-full h-full object-cover"
+                />
               </div>
+
+
               <div className="text-left">
                 <div className="font-montserrat font-semibold text-deep-blue">Prashant Sapkota</div>
                 <div className="text-gray-600">Founder & Lead Financial Advisor</div>
@@ -311,67 +374,6 @@ export default function About() {
 
                 <p className="text-gray-600 leading-relaxed">
                   {value.description}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Team Section */}
-      <section className="py-12 sm:py-20 bg-gray-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-12 lg:mb-16"
-          >
-            <h2 className="text-3xl sm:text-4xl font-montserrat font-bold text-deep-blue mb-4 lg:mb-6">
-              Our Team
-            </h2>
-            <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
-              A dedicated group of financial professionals committed to helping
-              impact-driven leaders achieve their goals and create lasting success.
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {teamMembers.map((member, index) => (
-              <motion.div
-                key={member.name}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -10, scale: 1.02 }}
-                className="bg-white rounded-2xl p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 text-center"
-              >
-                {/* Profile Image */}
-                <div className="relative mb-4 lg:mb-6">
-                  <div className="w-24 h-24 sm:w-32 sm:h-32 mx-auto rounded-full gradient-primary flex items-center justify-center mb-4">
-                    <span className="text-white font-montserrat font-bold text-2xl sm:text-3xl">
-                      {member.image}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Member Info */}
-                <h3 className="text-lg sm:text-xl font-montserrat font-bold text-deep-blue mb-2">
-                  {member.name}
-                </h3>
-
-                <p className="text-emerald-custom font-semibold mb-2">
-                  {member.role}
-                </p>
-
-                <p className="text-sm text-gray-500 mb-4">
-                  {member.credentials}
-                </p>
-
-                <p className="text-gray-600 leading-relaxed text-sm">
-                  {member.bio}
                 </p>
               </motion.div>
             ))}
