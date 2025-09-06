@@ -5,16 +5,16 @@ import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 
 const companies = [
-  { name: 'Fidelity', initials: 'FI' },
-  { name: 'Charles Schwab', initials: 'CS' },
-  { name: 'Vanguard', initials: 'VG' },
-  { name: 'Edward Jones', initials: 'EJ' },
-  { name: 'Merrill Lynch', initials: 'ML' },
-  { name: 'Morgan Stanley', initials: 'MS' },
-  { name: 'Goldman Sachs', initials: 'GS' },
-  { name: 'JP Morgan', initials: 'JPM' },
-  { name: 'Wells Fargo', initials: 'WF' },
-  { name: 'Bank of America', initials: 'BOA' },
+  { name: 'Fidelity', initials: 'FI', img: '/canada_protection_plan.png' },
+  { name: 'Charles Schwab', initials: 'CS', img: '/equitable_health.png' },
+  { name: 'Vanguard', initials: 'VG', img: '/foresters_financial.svg' },
+  { name: 'Edward Jones', initials: 'EJ', img: '/ivari.svg' },
+  { name: 'Merrill Lynch', initials: 'ML', img: '/manu_life.jpg' },
+  { name: 'Morgan Stanley', initials: 'MS', img: '/morgan-stanley.png' },
+  { name: 'Goldman Sachs', initials: 'GS', img: '/goldman-sachs.png' },
+  { name: 'JP Morgan', initials: 'JPM', img: '/jp-morgan.png' },
+  { name: 'Wells Fargo', initials: 'WF', img: '/wells-fargo.png' },
+  { name: 'Bank of America', initials: 'BOA', img: '/bank-of-america.png' },
 ];
 
 export function TrustedBySection() {
@@ -76,7 +76,19 @@ export function TrustedBySection() {
               className="flex items-center justify-center p-4 lg:p-6 bg-gray-50 rounded-xl hover:bg-gray-100 transition-all duration-300 group"
             >
               <div className="relative w-20 h-12 lg:w-24 lg:h-12 grayscale group-hover:grayscale-0 transition-all duration-300">
-                <div className="w-full h-full bg-gradient-to-r from-deep-blue to-emerald-custom rounded flex items-center justify-center">
+                <img
+                  src={company.img}
+                  alt={`${company.name} logo (${company.initials})`}
+                  className="w-full h-full object-contain"
+                  onError={(e) => {
+                    // Fallback to initials if image fails to load
+                    e.currentTarget.style.display = 'none';
+                    e.currentTarget.nextElementSibling.style.display = 'flex';
+                  }}
+                />
+                <div 
+                  className="hidden w-full h-full bg-gradient-to-r from-deep-blue to-emerald-custom rounded items-center justify-center absolute inset-0"
+                >
                   <span className="text-white font-montserrat font-bold text-xs lg:text-sm">
                     {company.initials}
                   </span>
@@ -101,7 +113,19 @@ export function TrustedBySection() {
                 >
                   <div className="flex items-center justify-center p-4 sm:p-6 bg-gray-50 rounded-xl hover:bg-gray-100 transition-all duration-300 group">
                     <div className="relative w-16 h-10 sm:w-20 sm:h-12 grayscale group-hover:grayscale-0 transition-all duration-300">
-                      <div className="w-full h-full bg-gradient-to-r from-deep-blue to-emerald-custom rounded flex items-center justify-center">
+                      <img
+                        src={company.img}
+                        alt={`${company.name} logo (${company.initials})`}
+                        className="w-full h-full object-contain"
+                        onError={(e) => {
+                          // Fallback to initials if image fails to load
+                          e.currentTarget.style.display = 'none';
+                          e.currentTarget.nextElementSibling.style.display = 'flex';
+                        }}
+                      />
+                      <div 
+                        className="hidden w-full h-full bg-gradient-to-r from-deep-blue to-emerald-custom rounded items-center justify-center absolute inset-0"
+                      >
                         <span className="text-white font-montserrat font-bold text-xs">
                           {company.initials}
                         </span>
