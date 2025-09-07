@@ -10,8 +10,8 @@ import NProgress from 'nprogress';
 
 const servicesDropdown = [
   { href: '/services/coaching', label: '1:1 Coaching' },
-  { href: '/services/community', label: 'Community Coaching' },
-  { href: '/services/experience', label: 'In-Person Experience' },
+  { href: '/services/art-of-living', label: 'The New Art of Living' },
+  // { href: '/services/experience', label: 'In-Person Experience' },
 ];
 
 const resourcesDropdown = [

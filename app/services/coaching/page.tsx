@@ -118,9 +118,14 @@ export default function OneOnOneCoaching() {
                         >
                             <div className="bg-gradient-to-br from-emerald-50 to-blue-50 rounded-2xl p-8 lg:p-12">
                                 <div className="text-center">
-                                    <div className="w-24 h-24 mx-auto mb-6 rounded-full gradient-primary flex items-center justify-center">
-                                        <span className="text-white font-montserrat font-bold text-3xl">PS</span>
+                                    <div className="w-20 h-20 mx-auto mb-4 rounded-full overflow-hidden gradient-primary flex items-center justify-center">
+                                        <img
+                                            src="/main_hero_image.png"
+                                            alt="Prashant Sapkota"
+                                            className="w-full h-full object-cover"
+                                        />
                                     </div>
+
                                     <h3 className="text-xl font-montserrat font-semibold text-deep-blue mb-4">
                                         Work Directly with Prashant
                                     </h3>
@@ -261,17 +266,7 @@ export default function OneOnOneCoaching() {
                                     Book Free Consultation
                                 </Link>
                             </Button>
-                            <Button
-                                asChild
-                                variant="outline"
-                                size="lg"
-                                className="border-2 border-white text-white hover:bg-white hover:text-deep-blue font-montserrat font-semibold px-8 py-4 text-lg hover:scale-105 hover:shadow-xl transition-all duration-300"
-                            >
-                                <Link href="/contact">
-                                    Learn More
-                                    <ArrowRight className="w-5 h-5 ml-2" />
-                                </Link>
-                            </Button>
+                         
                         </div>
                     </motion.div>
                 </div>
